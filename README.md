@@ -8,7 +8,7 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 
 ## What's inside
 
-- **60+ notes** organized by escalation vector, each in a consistent shape: concept → hands-on enumeration and exploitation (`whoami /priv`, `cmd`/`powershell`) → detection → defenses → related notes.
+- **75+ notes** organized by escalation vector, each in a consistent shape: concept → hands-on enumeration and exploitation (`whoami /priv`, `cmd`/`powershell`) → detection → defenses → related notes.
 - **Full vector coverage** — automated enumeration (WinPEAS/PowerUp), service misconfigurations (unquoted paths, weak `binPath`/file permissions, DLL hijacking, service-via-registry, named pipes), scheduled tasks and startup apps, registry exploitation (`AlwaysInstallElevated`, autoruns), **UAC bypass** (fodhelper/eventvwr/computerdefaults/sdclt), **token-privilege abuse** (SeImpersonate, SeBackup/SeRestore, SeTakeOwnership, SeLoadDriver, SeDebug), the **potato family** (Juicy/Rogue/Print/God/Rotten), kernel exploits, and credential mining (SAM/SYSTEM, LSASS, NTDS.dit, GPP `cpassword`, registry, ADS, unattend files).
 - A **methodology checklist** that indexes every vector, plus two full **hands-on labs** (SeImpersonate→SYSTEM, unquoted service path→SYSTEM).
 - Copy-ready, language-tagged commands throughout, each with detection and defensive guidance.
@@ -20,7 +20,8 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | Note | Covers |
 |------|--------|
 | [Escalation Methodology & Checklist](Escalate-My-Privilege-Windows.md) | The step-by-step checklist that indexes every vector below |
-| [Network Enumeration](Network-Enumeration.md) · [User Enumeration](User-Enumeration.md) · [Version & Configuration](Windows-Version-and-Configuration.md) | Situational awareness after landing a shell |
+| [Situational Awareness](Situational-Awareness.md) | Network position, active defences, and detection surface |
+| [Network Enumeration](Network-Enumeration.md) · [User Enumeration](User-Enumeration.md) · [Version & Configuration](Windows-Version-and-Configuration.md) | Account and host detail after landing a shell |
 | [Privilege Escalation Tools](Privilege-Escalation-Tools.md) | WinPEAS, PowerUp, SharpUp, Seatbelt, Watson |
 
 ### Token privileges
@@ -30,6 +31,14 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | [Token Privilege Abuse (index)](Token-Privilege-Abuse/Token-Privilege-Abuse.md) | `whoami /priv` → exploit map |
 | [SeBackup / SeRestore](Token-Privilege-Abuse/SeBackup-and-SeRestore-Abuse.md) · [SeTakeOwnership](Token-Privilege-Abuse/SeTakeOwnership-Abuse.md) | Read/write any file; take ownership |
 | [SeLoadDriver](Token-Privilege-Abuse/SeLoadDriver-Abuse.md) · [SeDebug](Token-Privilege-Abuse/SeDebug-Abuse.md) | BYOVD kernel load; open any process |
+
+### Built-in group memberships
+
+| Note | Covers |
+|------|--------|
+| [Windows Built-in Groups (index)](Windows-Built-in-Groups/Windows-Built-in-Groups.md) | Privileged groups that grant SYSTEM/Domain Admin |
+| [Backup Operators](Windows-Built-in-Groups/Backup-Operators.md) · [DnsAdmins](Windows-Built-in-Groups/DnsAdmins.md) · [Server Operators](Windows-Built-in-Groups/Server-Operators.md) | SeBackup file theft · DNS plugin-DLL · service reconfigure on a DC |
+| [Print Operators](Windows-Built-in-Groups/Print-Operators.md) · [Hyper-V Administrators](Windows-Built-in-Groups/Hyper-V-Administrators.md) · [Event Log Readers](Windows-Built-in-Groups/Event-Log-Readers.md) | SeLoadDriver BYOVD · hypervisor/VHD abuse · command-line creds in logs |
 
 ### Impersonation & potato attacks
 
@@ -45,7 +54,7 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 |------|--------|
 | [Services Exploitation (index)](Services-Exploitation/Services-Exploitation.md) | Enumeration, control, and abuse of services |
 | [Unquoted Service Path](Services-Exploitation/Unquoted-Service-Path-Vulnerability.md) · [Insecure Permissions (binPath)](Services-Exploitation/Insecure-Service-Permissions(binPath).md) · [Insecure File Permissions](Services-Exploitation/Insecure-File-Permissions-Service-Executable-Files-Path.md) | Service misconfiguration classes |
-| [DLL Hijacking](Services-Exploitation/Dynamic-Link-Library-Hijacking(DLL-Hijacking).md) · [Service via Registry](Services-Exploitation/Service-Escalation-via-Registry.md) · [Named Pipes](Services-Exploitation/Named-Pipes.md) | Load-path and registry abuse |
+| [DLL Hijacking](Services-Exploitation/Dynamic-Link-Library-Hijacking(DLL-Hijacking).md) · [DLL Injection](DLL-Injection.md) · [Service via Registry](Services-Exploitation/Service-Escalation-via-Registry.md) · [Named Pipes](Services-Exploitation/Named-Pipes.md) | Load-path, injection, and registry abuse |
 | [Scheduled Tasks](Privilege-Escalation-via-Scheduled-Tasks.md) · [Startup Applications](Privilege-Escalation-via-Startup-Applications.md) · [RunAs](Escalation-via-RunAs.md) | Autostart vectors |
 
 ### Registry & UAC bypass
@@ -70,6 +79,14 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 |------|--------|
 | [Password Mining (index)](Password-Mining/Password-Mining.md) | Credential discovery on Windows |
 | [LSASS Dumping](Password-Mining/LSASS-Credential-Dumping.md) · [GPP cpassword](Password-Mining/Group-Policy-Preferences-cpassword.md) · [SAM & SYSTEM](Password-Mining/SAM-and-SYSTEM-files.md) · [NTDS.dit](Password-Mining/NTDS.DIT-Active-Directory-Domain.md) | Live memory, SYSVOL, hives, DC database |
+
+### Post-escalation, breakout & pillaging
+
+| Note | Covers |
+|------|--------|
+| [Citrix Breakout](Citrix-Breakout.md) | Escape a published/kiosk app to a host shell |
+| [Interacting with Users](Interacting-with-Users.md) | Capture credentials from other logged-on users |
+| [Pillaging](Pillaging.md) | Sweep the host for credentials, keys, and tokens |
 
 ### Hands-on labs
 
