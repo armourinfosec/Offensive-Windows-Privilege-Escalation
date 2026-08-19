@@ -99,6 +99,19 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | [Miscellaneous Techniques](Miscellaneous-Techniques.md) | Saved RDP creds, Utilman, WSL, COM hijacking, third-party CVEs |
 | [Windows Hardening](Windows-Hardening.md) | Defensive checklist closing every vector, verifiable with the enum script |
 
+### Notable CVEs & recent additions
+
+| Note | Covers |
+|------|--------|
+| [PrintNightmare (CVE-2021-34527)](PrintNightmare-CVE-2021-34527.md) · [HiveNightmare / SeriousSAM (CVE-2021-36934)](Password-Mining/HiveNightmare-SeriousSAM-CVE-2021-36934.md) · [CLFS Driver LPE (CVE-2023-28252)](Windows-Kernel-Exploits/CLFS-Driver-LPE-CVE-2023-28252.md) | Notable Windows LPEs |
+| [COM Hijacking](Registry-Exploitation/COM-Hijacking.md) · [StorSvc DLL Hijack](Services-Exploitation/StorSvc-Service-DLL-Hijacking.md) · [DPAPI & Saved Credentials](Password-Mining/DPAPI-and-Saved-Credentials.md) · [WSL Privilege Escalation](WSL-Privilege-Escalation.md) | COM / service-DLL / DPAPI / WSL |
+
+### Flashcards
+
+| Note | Covers |
+|------|--------|
+| [Flashcards](Flashcards/README.md) | Spaced-repetition revision decks (Q::A) |
+
 ### Hands-on labs
 
 | Lab | Covers |

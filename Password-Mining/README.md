@@ -4,9 +4,11 @@ Map-of-Content for the Password Mining notes in this Windows privilege-escalatio
 
 ## Notes
 - [Password Mining with LaZagne](Password-Mining.md) — folder overview
-- [Extracting Passwords Stored in Services](Extracting-Passwords-Stored-in-Services.md)
+- [DPAPI and Saved Credentials](DPAPI-and-Saved-Credentials.md) — DPAPI-protected blobs live under the user's profile:
+- [Extracting Passwords Stored in Services](Extracting-Passwords-Stored-in-Services.md) — SessionGopher decrypts saved sessions from the tools admins use to connect elsewhere — each is also recoverable by hand:
 - [Extracting Passwords from Sticky Notes](Extracting-Passwords-from-Sticky-Notes.md)
 - [Group Policy Preferences (cpassword)](Group-Policy-Preferences-cpassword.md) — Group Policy Preferences (GPP) let domain admins push settings — including creating local users and mapping drives — with an embedded…
+- [HiveNightmare / SeriousSAM (CVE-2021-36934)](HiveNightmare-SeriousSAM-CVE-2021-36934.md) — Check whether Users can read the SAM (the tell-tale ACL) and whether shadow copies exist:
 - [LSASS Credential Dumping](LSASS-Credential-Dumping.md) — The Local Security Authority Subsystem Service (lsass.exe) holds the secrets of everyone logged on to a host — NTLM hashes, Kerberos…
 - [Mounting VHD and VHDX Files](Mounting-VHD-and-VHDX.md)
 - [Active Directory Domain - NTDS.DIT](NTDS.DIT-Active-Directory-Domain.md)

