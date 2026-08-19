@@ -1,0 +1,15 @@
+# Claude Code / assistant working files
+.claude/
+.remember/
+
+# Obsidian local UI state (kept out of the published vault)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+.*.swp
