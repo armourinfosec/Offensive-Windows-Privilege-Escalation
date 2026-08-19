@@ -89,6 +89,16 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | [Interacting with Users](Interacting-with-Users.md) | Capture credentials from other logged-on users |
 | [Pillaging](Pillaging.md) | Sweep the host for credentials, keys, and tokens |
 
+### Targets, context & defense
+
+| Note | Covers |
+|------|--------|
+| [Communication with Processes](Communication-with-Processes.md) | Named pipes, RPC/DCOM, COM, ALPC as escalation surfaces |
+| [Windows Server vs Desktop](Windows-Server-vs-Desktop.md) | How target type/role shifts the playbook |
+| [Legacy Operating Systems](Legacy-Operating-Systems.md) | Privesc on EOL Windows (kernel-exploit heavy) |
+| [Miscellaneous Techniques](Miscellaneous-Techniques.md) | Saved RDP creds, Utilman, WSL, COM hijacking, third-party CVEs |
+| [Windows Hardening](Windows-Hardening.md) | Defensive checklist closing every vector, verifiable with the enum script |
+
 ### Hands-on labs
 
 | Lab | Covers |
@@ -96,6 +106,8 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 | [Lab Setup (PowerShell)](Labs/Windows-Privilege-Escalation-Lab-Setup.md) | Provision a vulnerable VM with every technique's misconfiguration |
 | [SeImpersonate → SYSTEM](Labs/SeImpersonate-Potato-to-SYSTEM.md) | Full potato escalation walkthrough |
 | [Unquoted Service Path → SYSTEM](Labs/Windows-Unquoted-Service-Path-to-SYSTEM.md) | Service misconfiguration end to end |
+| [Skills Assessment Part 1](Labs/Skills-Assessment-Part-1.md) | Self-test: service/registry vectors against the lab box |
+| [Skills Assessment Part 2](Labs/Skills-Assessment-Part-2.md) | Self-test: token privileges, groups & credentials |
 
 ## How to read
 
