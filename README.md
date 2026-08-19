@@ -92,6 +92,7 @@ A structured, hands-on reference on **escalating from a low-privileged Windows f
 
 | Lab | Covers |
 |-----|--------|
+| [Lab Setup (PowerShell)](Labs/Windows-Privilege-Escalation-Lab-Setup.md) | Provision a vulnerable VM with every technique's misconfiguration |
 | [SeImpersonate → SYSTEM](Labs/SeImpersonate-Potato-to-SYSTEM.md) | Full potato escalation walkthrough |
 | [Unquoted Service Path → SYSTEM](Labs/Windows-Unquoted-Service-Path-to-SYSTEM.md) | Service misconfiguration end to end |
 

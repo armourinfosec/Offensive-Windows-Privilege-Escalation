@@ -203,7 +203,6 @@ SeImpersonatePrivilege   Enabled
 - [SweetPotato](https://github.com/CCob/SweetPotato)
 ## Related
 - [Windows Privilege Escalation](../README.md) — parent MOC for all Windows privesc techniques
-- Privilege Escalation — top-level MOC
 - [Token Impersonation](Token-Impersonation.md) — foundational sibling: how Windows access tokens work before potato exploits can leverage them
 - [Juicy Potato](Juicy-Potato.md) — sibling tool: classic potato for SeImpersonatePrivilege abuse on older Windows builds
 - [God Potato](God-Potato.md) — sibling tool: modern universal potato that works across Windows 7–Server 2022

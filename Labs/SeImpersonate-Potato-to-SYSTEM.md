@@ -13,7 +13,6 @@ Starting from a **service account shell that holds `SeImpersonatePrivilege`** (t
 
 - Understanding of Windows access tokens, impersonation, and why `SeImpersonatePrivilege` / `SeAssignPrimaryTokenPrivilege` allow full takeover — see [Windows Privilege Escalation](../README.md).
 - Familiarity with service accounts (`IIS APPPOOL\*`, `NT SERVICE\MSSQLSERVER`, `LOCAL SERVICE`, `NETWORK SERVICE`) and how they receive impersonate rights by default.
-- Ability to get a foothold shell as a service account (Netcat / a web-shell / `xp_cmdshell`) — the broader escalation context is the Privilege Escalation module MOC.
 - Basic `msfvenom` payload generation and file transfer to the target.
 
 ## Environment / Setup
@@ -308,5 +307,4 @@ rm -f PrintSpoofer64.exe GodPotato-NET4.exe RoguePotato.exe nc.exe
 
 - ROADMAP — where this lab fits in the curriculum
 - [Windows Privilege Escalation](../README.md) — parent escalation context
-- Privilege Escalation — module Map-of-Content
 - [Windows Unquoted Service Path to SYSTEM](Windows-Unquoted-Service-Path-to-SYSTEM.md) — sibling Windows privesc lab (service-misconfig vector, not token impersonation)
